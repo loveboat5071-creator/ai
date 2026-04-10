@@ -1,0 +1,12 @@
+{
+  "sections": [
+    { "id": "hero", "type": "hero", "enabled": true },
+    { "id": "valueProps", "type": "valueProps", "enabled": true },
+    { "id": "concept", "type": "concept", "enabled": true },
+    { "id": "comparison", "type": "comparison", "enabled": true },
+    { "id": "howItWorks", "type": "howItWorks", "enabled": true },
+    { "id": "useCases", "type": "useCases", "enabled": true },
+    { "id": "why", "type": "why", "enabled": true },
+    { "id": "estimateGuide", "type": "estimateGuide", "enabled": true }
+  ]
+}

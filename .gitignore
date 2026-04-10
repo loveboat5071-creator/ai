@@ -1,0 +1,21 @@
+# 문서 파일 (깃허브 업로드 제외)
+*.pdf
+*.xlsx
+*.xls
+*.pptx
+*.ppt
+
+# 시스템
+.DS_Store
+.playwright-cli/
+
+# 환경변수
+.env*
+
+# 외부 수집 원천 데이터
+data_sources/
+sample_data/
+
+# 로컬 검증 산출물
+output/playwright/
+.vercel

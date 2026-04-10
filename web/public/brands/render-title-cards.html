@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>WSM Title Cards</title>
+  <style>
+    @font-face {
+      font-family: 'Pretendard';
+      font-weight: 700;
+      src: url('/brands/fonts/Pretendard-Bold.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: 'Pretendard';
+      font-weight: 800;
+      src: url('https://ws-media.co.kr/fonts/pretendard/Pretendard-ExtraBold.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: 'Pretendard';
+      font-weight: 900;
+      src: url('/brands/fonts/Pretendard-Black.woff2') format('woff2');
+    }
+
+    :root {
+      --navy: #0b1327;
+      --navy-soft: #14213d;
+      --red: #ef4444;
+      --text: #0f172a;
+      --muted: #64748b;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 48px;
+      background: #ffffff;
+      display: grid;
+      gap: 24px;
+      font-family: 'Pretendard', sans-serif;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-title {
+      width: 780px;
+      height: 220px;
+      padding: 0 0 0 34px;
+      background: transparent;
+      color: var(--text);
+      border: 0;
+    }
+
+    .cover-title .eyebrow {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .cover-title h1 {
+      margin: 26px 0 0 0;
+      font-size: 78px;
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      white-space: pre-line;
+    }
+
+    .cover-title .accent {
+      position: absolute;
+      left: 0;
+      top: 52px;
+      width: 8px;
+      height: 148px;
+      background: var(--red);
+    }
+
+    .section-title {
+      width: 820px;
+      height: 132px;
+      padding: 24px 28px 18px;
+      background: linear-gradient(135deg, #fff 0%, #f5f8fc 100%);
+      border-bottom: 1px solid #d7e0ec;
+      color: var(--text);
+    }
+
+    .section-title::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 88px;
+      height: 8px;
+      background: var(--red);
+    }
+
+    .section-title .eyebrow {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .section-title h2 {
+      margin: 22px 0 0;
+      font-size: 52px;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+  <section class="card cover-title" id="cover-title">
+    <div class="eyebrow">MEDIA PROPOSAL DECK</div>
+    <div class="accent"></div>
+    <h1>포커스미디어
+제안 견적서</h1>
+  </section>
+
+  <section class="card section-title" id="summary-title">
+    <div class="eyebrow">Executive Summary</div>
+    <h2>견적 요약</h2>
+  </section>
+
+  <section class="card section-title" id="creative-title">
+    <div class="eyebrow">Creative Direction</div>
+    <h2>광고 소재 제작 제안</h2>
+  </section>
+
+  <section class="card section-title" id="storyboard-title">
+    <div class="eyebrow">Storyboard</div>
+    <h2>소재 구성안</h2>
+  </section>
+
+  <section class="card section-title" id="inventory-title">
+    <div class="eyebrow">Inventory</div>
+    <h2>가동리스트</h2>
+  </section>
+
+  <section class="card section-title" id="notice-title">
+    <div class="eyebrow">Notice</div>
+    <h2>참고사항 및 유의사항</h2>
+  </section>
+</body>
+</html>

@@ -1,0 +1,34 @@
+[
+  {
+    "slide_number": 1,
+    "source_xml": "ppt/slides/slide1.xml",
+    "text_items": [
+      "TJP",
+      "인공지능연구소",
+      "포커스미디어 오토마타 제작 의뢰"
+    ],
+    "combined_text": "TJP / 인공지능연구소 / 포커스미디어 오토마타 제작 의뢰"
+  },
+  {
+    "slide_number": 2,
+    "source_xml": "ppt/slides/slide2.xml",
+    "text_items": [
+      "의뢰내용",
+      ":",
+      "희망주소",
+      "입력시",
+      "주소지의 네이버지도 기준",
+      "설정값",
+      "반경",
+      "(km)",
+      "이내 실제 아파트단지를 찾아내어 포커스 미디어의 주소지별 가동리스트와 비교 일치하는 아파트 단지를 선별 골라 엑셀파일로 저장 후 견적서 형태로 출력"
+    ],
+    "combined_text": "의뢰내용 / : / 희망주소 / 입력시 / 주소지의 네이버지도 기준 / 설정값 / 반경 / (km) / 이내 실제 아파트단지를 찾아내어 포커스 미디어의 주소지별 가동리스트와 비교 일치하는 아파트 단지를 선별 골라 엑셀파일로 저장 후 견적서 형태로 출력"
+  },
+  {
+    "slide_number": 3,
+    "source_xml": "ppt/slides/slide3.xml",
+    "text_items": [],
+    "combined_text": ""
+  }
+]

@@ -1,0 +1,186 @@
+[
+  {
+    "channel_name": "MBC",
+    "bonus_type": "basic",
+    "condition_type": "always_true",
+    "min_value": 0.0,
+    "rate": 0.3,
+    "description": "기본 보너스"
+  },
+  {
+    "channel_name": "MBC",
+    "bonus_type": "targeting",
+    "condition_type": "non_targeting",
+    "min_value": 0.0,
+    "rate": 0.15,
+    "description": "MBC 논타기팅 보너스"
+  },
+  {
+    "channel_name": "MBC",
+    "bonus_type": "duration",
+    "condition_type": "min_duration",
+    "min_value": 3.0,
+    "rate": 0.1,
+    "description": "3개월 이상 기간 보너스"
+  },
+  {
+    "channel_name": "MBC",
+    "bonus_type": "duration",
+    "condition_type": "min_duration",
+    "min_value": 6.0,
+    "rate": 0.2,
+    "description": "6개월 이상 기간 보너스"
+  },
+  {
+    "channel_name": "MBC",
+    "bonus_type": "volume",
+    "condition_type": "min_budget",
+    "min_value": 30000000.0,
+    "rate": 0.15,
+    "description": "월 3천만원 이상 볼륨 보너스"
+  },
+  {
+    "channel_name": "MBC",
+    "bonus_type": "volume",
+    "condition_type": "min_budget",
+    "min_value": 40000000.0,
+    "rate": 0.2,
+    "description": "월 4천만원 이상 볼륨 보너스"
+  },
+  {
+    "channel_name": "MBC",
+    "bonus_type": "volume",
+    "condition_type": "min_budget",
+    "min_value": 50000000.0,
+    "rate": 0.25,
+    "description": "월 5천만원 이상 볼륨 보너스"
+  },
+  {
+    "channel_name": "EBS",
+    "bonus_type": "basic",
+    "condition_type": "always_true",
+    "min_value": 0.0,
+    "rate": 1.5,
+    "description": "기본 보너스"
+  },
+  {
+    "channel_name": "EBS",
+    "bonus_type": "duration",
+    "condition_type": "min_duration",
+    "min_value": 2.0,
+    "rate": 0.1,
+    "description": "2개월 이상 기간 보너스"
+  },
+  {
+    "channel_name": "EBS",
+    "bonus_type": "duration",
+    "condition_type": "min_duration",
+    "min_value": 3.0,
+    "rate": 0.2,
+    "description": "3개월 이상 기간 보너스"
+  },
+  {
+    "channel_name": "EBS",
+    "bonus_type": "duration",
+    "condition_type": "min_duration",
+    "min_value": 6.0,
+    "rate": 0.4,
+    "description": "6개월 이상 기간 보너스"
+  },
+  {
+    "channel_name": "EBS",
+    "bonus_type": "volume",
+    "condition_type": "min_budget",
+    "min_value": 15000000.0,
+    "rate": 0.2,
+    "description": "월 15백만원 이상 볼륨 보너스"
+  },
+  {
+    "channel_name": "EBS",
+    "bonus_type": "cosubscription",
+    "condition_type": "media",
+    "min_value": 0.0,
+    "rate": 0.2,
+    "description": "동시청약 보너스 - EBS"
+  },
+  {
+    "channel_name": "EBS",
+    "bonus_type": "cosubscription",
+    "condition_type": "media",
+    "min_value": 0.0,
+    "rate": 0.1,
+    "description": "동시청약 보너스 - KBS, MBC"
+  },
+  {
+    "channel_name": "PP",
+    "bonus_type": "promotion",
+    "condition_type": "new_advertiser",
+    "min_value": 0.0,
+    "rate": 0.3,
+    "description": "신규광고주 및 업종 프로모션 보너스"
+  },
+  {
+    "channel_name": "PP",
+    "bonus_type": "volume",
+    "condition_type": "min_budget",
+    "min_value": 20000000.0,
+    "rate": 0.4,
+    "description": "월 2천만원 이상 볼륨 보너스"
+  },
+  {
+    "channel_name": "PP",
+    "bonus_type": "volume",
+    "condition_type": "min_budget",
+    "min_value": 30000000.0,
+    "rate": 0.5,
+    "description": "월 3천만원 이상 볼륨 보너스"
+  },
+  {
+    "channel_name": "PP",
+    "bonus_type": "volume",
+    "condition_type": "min_budget",
+    "min_value": 40000000.0,
+    "rate": 0.6,
+    "description": "월 4천만원 이상 볼륨 보너스"
+  },
+  {
+    "channel_name": "PP",
+    "bonus_type": "volume",
+    "condition_type": "min_budget",
+    "min_value": 50000000.0,
+    "rate": 0.7,
+    "description": "월 5천만원 이상 볼륨 보너스"
+  },
+  {
+    "channel_name": "PP",
+    "bonus_type": "volume",
+    "condition_type": "min_budget",
+    "min_value": 60000000.0,
+    "rate": 0.8,
+    "description": "월 6천만원 이상 볼륨 보너스"
+  },
+  {
+    "channel_name": "PP",
+    "bonus_type": "volume",
+    "condition_type": "min_budget",
+    "min_value": 80000000.0,
+    "rate": 1.0,
+    "description": "월 8천만원 이상 볼륨 보너스"
+  },
+  {
+    "channel_name": "PP",
+    "bonus_type": "duration",
+    "condition_type": "min_duration",
+    "min_value": 3.0,
+    "rate": 0.1,
+    "description": "3개월 이상 기간 보너스"
+  },
+  {
+    "channel_name": "PP",
+    "bonus_type": "duration",
+    "condition_type": "min_duration",
+    "min_value": 6.0,
+    "rate": 0.2,
+    "description": "6개월 이상 기간 보너스"
+  }
+]

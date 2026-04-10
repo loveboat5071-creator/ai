@@ -1,0 +1,115 @@
+{
+  "id": "proposal_sample",
+  "label": "포커스미디어 제안서 샘플",
+  "source_path": "/Users/parktaejun/Desktop/wsmedia-focusmap/★포커스미디어 제안서 샘플★.xlsx",
+  "kind": "xlsx",
+  "sheets": [
+    {
+      "sheet_index": 1,
+      "sheet_name": "요약",
+      "dimensions": {
+        "max_row": 21,
+        "max_column": 15
+      },
+      "row_export_file": "sheet_01_rows.jsonl",
+      "header_row": 12,
+      "non_empty_row_count": 16,
+      "non_empty_cell_count": 55,
+      "used_range": "B1:I21",
+      "table_export": {
+        "columns": [
+          "광고상품",
+          "타겟",
+          "가동 수",
+          "세대 수",
+          "대당단가",
+          "청약금액/월",
+          "할인률",
+          "비 고"
+        ],
+        "source_columns": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "row_count": 5,
+        "csv_file": "sheet_01_table.csv",
+        "jsonl_file": "sheet_01_table.jsonl"
+      }
+    },
+    {
+      "sheet_index": 2,
+      "sheet_name": "가동리스트",
+      "dimensions": {
+        "max_row": 133,
+        "max_column": 18
+      },
+      "row_export_file": "sheet_02_rows.jsonl",
+      "header_row": 3,
+      "non_empty_row_count": 132,
+      "non_empty_cell_count": 2202,
+      "used_range": "B2:R133",
+      "table_export": {
+        "columns": [
+          "단지명",
+          "도시",
+          "구",
+          "동(법정동)",
+          "주소(지번)",
+          "주소(도로명)",
+          "건물유형",
+          "준공연도",
+          "건물층수",
+          "기준평형",
+          "총 세대수",
+          "총 인구수",
+          "최초 설치일자",
+          "판매등급",
+          "판매수량",
+          "대당단가",
+          "4주 금액"
+        ],
+        "source_columns": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R"
+        ],
+        "row_count": 130,
+        "csv_file": "sheet_02_table.csv",
+        "jsonl_file": "sheet_02_table.jsonl"
+      }
+    },
+    {
+      "sheet_index": 3,
+      "sheet_name": "Sheet2",
+      "dimensions": {
+        "max_row": 0,
+        "max_column": 0
+      },
+      "row_export_file": "sheet_03_rows.jsonl",
+      "header_row": null,
+      "non_empty_row_count": 0,
+      "non_empty_cell_count": 0,
+      "used_range": null
+    }
+  ]
+}

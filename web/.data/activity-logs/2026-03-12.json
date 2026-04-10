@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2026-03-12T15:10:51.447Z",
+    "action": "search",
+    "address": "김포공항역",
+    "radii": [
+      2
+    ],
+    "resultCount": 30,
+    "advertiserName": "",
+    "campaignName": "",
+    "ip": "::1"
+  }
+]

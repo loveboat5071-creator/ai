@@ -1,0 +1,34 @@
+[
+  {
+    "timestamp": "2026-03-13T10:44:59.579Z",
+    "action": "search",
+    "address": "서울 강남구",
+    "radii": [
+      2
+    ],
+    "resultCount": 62,
+    "advertiserName": "",
+    "campaignName": "",
+    "ip": "::1"
+  },
+  {
+    "timestamp": "2026-03-13T10:47:09.664Z",
+    "action": "search-district",
+    "address": "강남구",
+    "radii": [],
+    "resultCount": 121,
+    "advertiserName": "",
+    "campaignName": "",
+    "ip": "::1"
+  },
+  {
+    "timestamp": "2026-03-13T10:48:02.576Z",
+    "action": "search-district",
+    "address": "강남구",
+    "radii": [],
+    "resultCount": 121,
+    "advertiserName": "",
+    "campaignName": "",
+    "ip": "::1"
+  }
+]

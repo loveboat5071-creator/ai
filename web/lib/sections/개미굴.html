@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>개미굴 – 종합 사업 계획 (내부용, 수정본)</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#0f1a2e;
+      --paper:#0e1729;
+      --text:#e6edf6;
+      --muted:#a8b3c7;
+      --line:rgba(255,255,255,.08);
+      --accent:#7cc4ff;
+      --accent2:#b6ffcb;
+      --shadow:0 12px 30px rgba(0,0,0,.35);
+      --radius:14px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background: radial-gradient(1200px 800px at 30% 0%, rgba(124,196,255,.12), transparent 60%),
+                  radial-gradient(900px 700px at 90% 20%, rgba(182,255,203,.10), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    a:hover{color:var(--accent)}
+    .app{
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      height:100vh;
+    }
+    .sidebar{
+      position:sticky;
+      top:0;
+      height:100vh;
+      border-right:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(15,26,46,.92), rgba(15,26,46,.75));
+      backdrop-filter: blur(8px);
+      padding:18px 14px;
+      overflow:auto;
+    }
+    .brand{
+      padding:10px 10px 14px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(14,23,41,.55);
+      box-shadow: var(--shadow);
+    }
+    .brand h1{
+      font-size:15px;
+      margin:0 0 6px;
+      letter-spacing:-.2px;
+    }
+    .brand .meta{
+      font-size:12px;
+      color:var(--muted);
+    }
+    .toc{
+      margin-top:14px;
+      padding:10px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(14,23,41,.35);
+    }
+    .toc h2{
+      font-size:12px;
+      margin:0 0 10px;
+      color:var(--muted);
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .toc a{
+      display:block;
+      padding:8px 10px;
+      border-radius:10px;
+      font-size:13px;
+      color:var(--text);
+      border:1px solid transparent;
+    }
+    .toc a:hover{
+      border-color:var(--line);
+      background: rgba(255,255,255,.04);
+    }
+    .toc a small{
+      display:block;
+      color:var(--muted);
+      font-size:11px;
+      margin-top:2px;
+      line-height:1.35;
+    }
+    .content{
+      padding:32px 28px 80px;
+      overflow:auto;
+    }
+    .paper{
+      max-width: 980px;
+      margin:0 auto;
+      background: rgba(14,23,41,.42);
+      border:1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      padding:28px 26px;
+    }
+    header.page-title{
+      margin-bottom:18px;
+      padding-bottom:16px;
+      border-bottom:1px solid var(--line);
+    }
+    header.page-title h1{
+      margin:0 0 6px;
+      font-size:24px;
+      letter-spacing:-.4px;
+    }
+    header.page-title p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    section{
+      padding:18px 0;
+      border-bottom:1px solid var(--line);
+    }
+    section:last-child{border-bottom:none}
+    h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-.2px;
+    }
+    h3{
+      margin:14px 0 6px;
+      font-size:15px;
+      letter-spacing:-.15px;
+    }
+    p{margin:8px 0}
+    ul{margin:8px 0 8px 18px}
+    li{margin:6px 0}
+    .kw{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      margin:6px 0 10px;
+      padding:6px 10px;
+      border:1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .quote{
+      margin:12px 0;
+      padding:12px 14px;
+      border-left:3px solid var(--accent);
+      background: rgba(124,196,255,.06);
+      border-radius: 10px;
+      color: var(--text);
+    }
+    .keyline{
+      margin-top:12px;
+      padding:12px 14px;
+      border:1px solid rgba(182,255,203,.22);
+      background: rgba(182,255,203,.05);
+      border-radius: 12px;
+    }
+    .keyline strong{color:var(--accent2)}
+    .badge{
+      font-family:var(--mono);
+      font-size:11px;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      margin-left:8px;
+      vertical-align:middle;
+    }
+    .muted{color:var(--muted)}
+    .note{
+      margin-top:14px;
+      padding:12px 14px;
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius: 12px;
+      background: rgba(0,0,0,.12);
+      color: var(--muted);
+      font-size:13px;
+    }
+    .footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:right;
+    }
+
+    /* Mobile */
+    @media (max-width: 920px){
+      .app{grid-template-columns: 1fr}
+      .sidebar{
+        height:auto;
+        position:relative;
+        border-right:none;
+        border-bottom:1px solid var(--line);
+      }
+      .content{height:auto}
+      .paper{padding:22px 16px}
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>개미굴 – 종합 사업 계획 (내부용, 수정본)</h1>
+        <div class="meta">
+          좌측 목차 · 우측 본문 · 섹션 클릭 시 해당 위치로 이동
+        </div>
+      </div>
+
+      <nav class="toc" aria-label="목차">
+        <h2>Contents</h2>
+        <a href="#ch0">0. 이 문서에 대하여
+          <small>내부용 원본, 파생 문서 기준</small>
+        </a>
+        <a href="#ch1">1. 문제 인식
+          <small>피드 피로, 단일 목적, 확장 불가 구조</small>
+        </a>
+        <a href="#ch2">2. 인간이 구조를 인식하는 방식
+          <small>공간 인지, 차원 불일치</small>
+        </a>
+        <a href="#ch3">3. 구조적 해법
+          <small>단일 에디터, 전환 설계, 구조 재사용</small>
+        </a>
+        <a href="#ch4">4. 사용 사례 (Verticals)
+          <small>게임/스토리/커뮤니티/기업</small>
+        </a>
+        <a href="#ch5">5. 에디터 및 창작 시스템
+          <small>세계 편집기, 노코드 철학, AI 보조</small>
+        </a>
+        <a href="#ch6">6. AI 활용 계획
+          <small>인지 부하 완화, 구조 우선</small>
+        </a>
+        <a href="#ch7">7. 사용자 경험 설계
+          <small>진입·전환·이해</small>
+        </a>
+        <a href="#ch8">8. 커뮤니티 구조와 네트워크
+          <small>휘발(발화) + 축적(구조/상태/패턴)</small>
+        </a>
+        <a href="#ch9">9. 외부 시스템 접점
+          <small>링크=진입, 임베드, API</small>
+        </a>
+        <a href="#ch10">10. 시장 분석
+          <small>단일 시장이 아닌 구조 시장</small>
+        </a>
+        <a href="#ch11">11. 경쟁 환경 분석
+          <small>기능 경쟁이 아닌 구조 경쟁</small>
+        </a>
+        <a href="#ch12">12. 수익 모델
+          <small>구조 기반 수익, vertical 확장</small>
+        </a>
+        <a href="#ch13">13. Go-to-Market
+          <small>하나의 사례로 시작, 구조 확장</small>
+        </a>
+        <a href="#ch14">14. 성장 전략 및 로드맵
+          <small>기능 추가가 아닌 사용 사례 추가</small>
+        </a>
+        <a href="#ch15">15. 트랙션 및 진행 상황
+          <small>작성 예정</small>
+        </a>
+        <a href="#ch16">16. 팀 및 운영
+          <small>작성 예정</small>
+        </a>
+        <a href="#ch17">17. 재무 계획
+          <small>저비용 구조, 축적형 수익</small>
+        </a>
+        <a href="#ch18">18. 리스크와 대응
+          <small>정체성 붕괴, 청소년 보호</small>
+        </a>
+        <a href="#ch19">19. 장기적 그림
+          <small>구조 플랫폼, 디지털 공간의 표준</small>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <article class="paper">
+        <header class="page-title">
+          <h1>개미굴 – 종합 사업 계획 (내부용, 수정본) <span class="badge">HTML v1</span></h1>
+          <p>구조 플랫폼 관점으로 정리된 통합본. “대화는 기본값 휘발, 축적은 구조/상태/전환 패턴”을 전제로 전체 장 간 정합성을 맞춤.</p>
+        </header>
+
+        <section id="ch0">
+          <h2>0. 이 문서에 대하여</h2>
+          <div class="kw">키워드: 내부용 원본, 파생 문서의 기준, 플랫폼 전체 그림</div>
+          <ul>
+            <li>이 문서는 개미굴을 <strong>단일 서비스가 아니라 ‘구조 플랫폼’</strong>으로 설명한다.</li>
+            <li>이후의 게임/웹소설/커뮤니티/기업 활용은 모두 이 구조의 응용이다.</li>
+            <li>이 문서의 목적은 “무엇을 만들겠다”가 아니라 <strong>“어떤 구조를 만들고, 그 구조가 무엇을 가능하게 하는가”</strong>를 고정하는 것이다.</li>
+          </ul>
+        </section>
+
+        <section id="ch1">
+          <h2>1. 문제 인식: 기존 디지털 구조의 한계</h2>
+          <div class="kw">키워드: 피드 피로, 단일 목적 플랫폼, 확장 불가 구조</div>
+
+          <p>오늘날 디지털 서비스의 문제는 콘텐츠의 질이나 양이 아니다. 사람들이 지친 이유는 더 이상 볼 것이 없어서가 아니라, <strong>어디에 있어야 하는지 알 수 없기 때문</strong>이다.</p>
+
+          <h3>1.1 피드 피로: 끝없이 소비하지만 남지 않는 구조</h3>
+          <ul>
+            <li>스크롤하면 새로운 것이 나온다</li>
+            <li>멈추면 뒤처진다</li>
+            <li>무엇을 봤는지는 곧 잊힌다</li>
+          </ul>
+          <p>피드 구조는 효율적인 소비를 만들었지만, 그 대가로 <strong>머무름과 맥락</strong>을 약화시켰다. 피로의 본질은 정보 과잉이 아니라 <strong>구조적 휘발성</strong>이다.</p>
+
+          <h3>1.2 단일 목적 플랫폼의 한계</h3>
+          <p>대부분의 플랫폼은 처음부터 목적이 고정되어 있다. 초기에는 명확하지만, 성장할수록 기능 추가가 정체성을 흐리고 구조를 무겁게 만든다. 문제는 기능 부족이 아니라 <strong>처음부터 고정된 구조</strong>다.</p>
+
+          <h3>1.3 확장 불가 구조: 기능을 더할수록 무너진다</h3>
+          <p>확장은 시도되지만 결과는 유사하다. 인터페이스는 복잡해지고 사용자는 길을 잃는다. 이는 실행 실패가 아니라 <strong>구조가 확장을 전제로 설계되지 않았기 때문</strong>이다.</p>
+
+          <h3>1.4 문제의 핵심: 콘텐츠가 아니라 구조</h3>
+          <p>콘텐츠는 계속 바뀌지만 구조는 오래 남는다. 구조가 맞지 않으면 좋은 콘텐츠도 소모되고 사라진다.</p>
+
+          <h3>1.5 이 문제는 UX가 아니라 설계의 문제다</h3>
+          <p>디자인 개선/알고리즘/마케팅으로는 해결되지 않는다. 이는 사용성 문제가 아니라 <strong>인간의 인지 방식과 구조의 불일치</strong>다.</p>
+
+          <div class="keyline"><strong>핵심 문장</strong><br/>문제는 무엇을 담느냐가 아니다. 문제는 무엇에 담고 있느냐다.</div>
+        </section>
+
+        <section id="ch2">
+          <h2>2. 인간이 구조를 인식하는 방식</h2>
+          <div class="kw">키워드: 공간 인지, 거리감, 맥락 저장, 사회적 장소</div>
+
+          <h3>2.1 인간은 공간 중심으로 사고한다</h3>
+          <p>인간은 정보를 목록이 아니라 위치·방향·이동 경로로 기억한다. 관계도 연결 수보다 “어디서 자주 마주치는가”로 깊어진다.</p>
+
+          <h3>2.2 웹페이지 구조의 한계: 공간이 아닌 문서의 연속</h3>
+          <p>전통적인 웹은 문서의 연속이다. 사용자는 “들어간다”기보다 “전환된다”고 느끼며, 맥락은 히스토리에만 남기 쉽다.</p>
+
+          <h3>2.3 피드 구조의 문제: 차원이 붕괴된 평면</h3>
+          <p>피드는 모든 콘텐츠를 동일 평면에 두고 깊이·거리·위치 개념을 약화시킨다. 중독성은 강하지만 애착과 정체성은 약해지기 쉽다.</p>
+
+          <h3>2.4 3D 메타버스의 역설: 차원이 과하다</h3>
+          <p>3D는 조작 비용이 크고 목적 없는 이동을 강요하기 쉽다. 일상적 사용을 위해서는 ‘차원의 과잉’이 된다.</p>
+
+          <h3>2.5 문제의 핵심: 인간 인지와 구조 차원의 불일치</h3>
+          <p>웹은 얕고, 피드는 붕괴되고, 3D는 과하다. 인간이 편안한 것은 <strong>공간처럼 느껴지는 최소 차원</strong>이다.</p>
+
+          <h3>2.6 개미굴이 택한 차원: 공간처럼 느껴지는 구조</h3>
+          <p>개미굴은 메신저 UI를 기본 진입점으로 삼아, 시각적으로 단순하지만 인지적으로는 공간이며 구조적으로는 <strong>이동과 전환 규칙</strong>이 있는 형태를 택한다.</p>
+
+          <div class="quote">문제는 3D냐 2D냐가 아니다. 문제는 인간이 이해할 수 있고, 편안함을 느끼는 차원인가이다.</div>
+        </section>
+
+        <section id="ch3">
+          <h2>3. 개미굴이 제안하는 구조적 해법</h2>
+          <div class="kw">키워드: 단일 에디터, 다중 용도, 구조 재사용</div>
+
+          <h3>3.1 해결의 방향: 기능 추가가 아니라 구조 재배치</h3>
+          <p>기능을 쌓는 방식은 복잡성을 만든다. 개미굴은 기능을 최소화하고 구조를 명확히 하며, 설명 없이 이해되는 흐름을 만든다.</p>
+
+          <h3>3.2 메신저 UI: 학습 비용이 낮은 공간 인터페이스</h3>
+          <p>채팅방은 사람들이 이미 ‘장소’로 인지하는 단위다. 개미굴은 이를 콘텐츠 소비와 창작의 기본 진입점으로 사용한다.</p>
+
+          <h3>3.3 ‘방’은 콘텐츠 단위이자 전환 단위</h3>
+          <p>방은 저장소가 아니라 <strong>경험이 발생하는 최소 단위</strong>이며, 맥락이 끝나면 다른 방으로 전환한다.</p>
+
+          <h3>3.4 전환 설계: 격자처럼 이어지는 대화공간</h3>
+          <ul>
+            <li>방의 목적성을 즉시 이해</li>
+            <li>대화가 끝났을 때 다음 전환이 막히지 않음</li>
+            <li>전환 반복으로 구조가 체득됨</li>
+          </ul>
+
+          <h3>3.5 같은 구조, 다른 사용 방식</h3>
+          <p>게임은 규칙/상태, 스토리는 서사/선택, 커뮤니티는 동시성/전환 패턴으로 공간을 채운다. 구조는 동일하고 사용 방식만 달라진다.</p>
+
+          <h3>3.6 확장 가능성</h3>
+          <p>기업/기관/상점도 문서가 아니라 ‘이동하며 이해하는 장소’로 제공할 수 있다. 링크가 아니라 ‘공간 진입’이 된다.</p>
+
+          <div class="keyline"><strong>핵심 문장</strong><br/>개미굴은 새로운 기능을 만드는 플랫폼이 아니다. 새로운 공간을 만들 수 있는 구조를 제공하는 플랫폼이다.</div>
+        </section>
+
+        <section id="ch4">
+          <h2>4. 구조 위에 올라가는 사용 사례들 (Verticals)</h2>
+          <div class="kw">키워드: 게임, 웹소설, 커뮤니티, 비게임 활용</div>
+
+          <h3>4.1 인터랙티브 게임</h3>
+          <ul>
+            <li>규칙·선택·상태 변화가 있는 세계</li>
+            <li>그래픽이 아닌 텍스트·구조 중심</li>
+          </ul>
+
+          <h3>4.2 웹소설 및 스토리 콘텐츠</h3>
+          <ul>
+            <li>회차가 아닌 대화공간 단위의 서사</li>
+            <li>독자가 참여자로 전환 가능한 구조</li>
+          </ul>
+
+          <h3>4.3 커뮤니티 및 팬 공간</h3>
+          <ul>
+            <li>대화 기록이 아니라 반복 만남의 패턴이 관계를 만든다</li>
+            <li>방 전환이 커뮤니티의 리듬을 만든다</li>
+          </ul>
+
+          <h3>4.4 기업·기관·상점 공간</h3>
+          <ul>
+            <li>기업 홈페이지 → ‘둘러보는 공간’</li>
+            <li>관공서 → 정보 전달 + 경로 안내</li>
+            <li>상점 → 상품 진열 + 이야기 + 소통</li>
+          </ul>
+
+          <p class="muted">모두 같은 에디터, 같은 구조, 다른 프리셋과 운영 방식.</p>
+        </section>
+
+        <section id="ch5">
+          <h2>5. 에디터 및 창작 시스템</h2>
+          <div class="kw">키워드: 공용 에디터, 목적 중립성, 구조 중심 설계, 세계 편집기</div>
+
+          <h3>5.1 소비가 아닌 창작이 권력이다</h3>
+          <p>에디터의 진입 장벽은 UX가 아니라 “누가 세계를 만들 수 있는가”라는 권력 분배의 문제다.</p>
+
+          <h3>5.2 ‘누구나 만든다’의 측정 기준</h3>
+          <div class="quote">
+            매뉴얼 없이, 첫 접속 30분 안에,<br/>
+            하나의 ‘작동하는 공간(전환·상태가 최소 1개 포함)’을 완성할 수 있어야 한다.
+          </div>
+
+          <h3>5.3 노코드는 기술이 아니라 철학이다</h3>
+          <p>코드를 요구하는 순간 창작의 주체는 소수로 고착된다. 개미굴은 “코드를 몰라도 상상력이 있으면 공간을 지을 수 있어야 한다”를 전제로 한다.</p>
+
+          <h3>5.4 도구는 하나, 결과는 무한</h3>
+          <p>게임/스토리/커뮤니티로 도구를 분리하지 않는다. 본질은 “공간을 만들고 연결하고 상태/전환 규칙을 얹는 것”이다.</p>
+
+          <h3>5.5 에디터는 ‘저작 도구’가 아니라 ‘세계 편집기’다</h3>
+          <ul>
+            <li>지역(Area), 장소(Location), 오브젝트(Object), 이벤트(Event), 상태(State)</li>
+          </ul>
+
+          <h3>5.6 복잡성은 결함이 아니라 노출 방식의 문제다</h3>
+          <p>해법은 기능 삭제가 아니라 <strong>접근 순서와 관점(모드)의 분리</strong>다.</p>
+
+          <h3>5.7 AI는 창조주가 아니라 조수다</h3>
+          <p>AI는 생산과 점검을 돕지만, “어떤 세계를 만들 것인가”는 인간의 몫이다.</p>
+
+          <h3>5.8 에디터가 곧 생태계다</h3>
+          <p>에디터의 사용성이 곧 성장 곡선이다. 창작자가 늘수록 세계는 자가 증식한다.</p>
+        </section>
+
+        <section id="ch6">
+          <h2>6. AI 활용 계획</h2>
+          <div class="kw">키워드: 보조자, 인지 부하 완화, 대량 시도, 다목적 재사용</div>
+
+          <h3>6.1 AI의 기본 입장</h3>
+          <div class="quote">AI는 판단하지 않는다. 대신 인간의 판단이 필요한 지점까지 가장 빠르게 데려다준다.</div>
+
+          <h3>6.2 AI가 해결하려는 문제</h3>
+          <ul>
+            <li>문장/설명/선택지 초안</li>
+            <li>설정 누락·불일치 탐지</li>
+            <li>반복 요소 자동 생성</li>
+            <li>프리셋 적용과 변형 제안</li>
+          </ul>
+
+          <h3>6.3 AI는 모든 vertical에서 재사용된다</h3>
+          <p>본질은 “공간·상태·전환을 설명하고 구성하는 언어” 생산이다.</p>
+
+          <h3>6.4 AI는 구조 없이 작동하지 않는다</h3>
+          <div class="quote">구조 없는 AI 생성은 세계가 아니라 텍스트를 만든다.</div>
+
+          <h3>6.5 AI는 에디터 흐름 안에 있어야 한다</h3>
+          <p>AI가 흐름 밖에 있으면 보조가 아니라 대체가 된다. AI는 에디터의 작업 흐름에 내장되어야 한다.</p>
+
+          <h3>6.6 인간이 책임져야 할 영역</h3>
+          <ul>
+            <li>세계의 주제와 방향</li>
+            <li>윤리적 판단</li>
+            <li>선택의 결과 설계</li>
+            <li>플레이 경험의 의미</li>
+          </ul>
+        </section>
+
+        <section id="ch7">
+          <h2>7. 사용자 경험 설계</h2>
+          <div class="kw">키워드: 진입, 전환, 이해</div>
+
+          <h3>7.1 UX의 출발점은 진입이다</h3>
+          <p>UX의 기본 단위는 기능이 아니라 <strong>공간 진입</strong>이다.</p>
+
+          <h3>7.2 사용자는 머무르지 않는다, 전환한다</h3>
+          <p>개미굴은 체류 시간을 늘리기보다 전환이 막히지 않도록 설계한다.</p>
+
+          <h3>7.3 이해는 전환의 반복에서 발생한다</h3>
+          <p>튜토리얼보다 전환 경험의 반복이 구조 학습을 만든다.</p>
+
+          <h3>7.4 일관성은 ‘전환 규칙’에서 유지된다</h3>
+          <p>UI 통일이 아니라 전환 규칙의 통일이 핵심이다.</p>
+
+          <h3>7.5 성공 기준</h3>
+          <ul>
+            <li>오래 머물렀는가? <span class="muted">아님</span></li>
+            <li>기능을 많이 썼는가? <span class="muted">아님</span></li>
+            <li><strong>다음 공간으로 자연스럽게 이동했는가?</strong> <span class="muted">핵심</span></li>
+            <li><strong>그 이동이 반복되었는가?</strong> <span class="muted">핵심</span></li>
+          </ul>
+        </section>
+
+        <section id="ch8">
+          <h2>8. 커뮤니티 구조와 네트워크 전략</h2>
+          <div class="kw">키워드: 장소 기반 네트워크, 동시성, 반복 재방문, 전환 밀도</div>
+
+          <div class="keyline">
+            <strong>정의 고정</strong><br/>
+            개미굴은 <strong>대화 로그(발화 텍스트)</strong>를 기본값으로 아카이브하지 않는다.<br/>
+            대신 <strong>구조(방/연결), 상태(선택/결과), 규칙(공간 성격), 관계 패턴(동시참여·재방문)</strong>이 축적된다.
+          </div>
+
+          <h3>8.1 방은 저장소가 아니라 대화가 발생하는 단위다</h3>
+          <p>발화는 기본값으로 남지 않지만, 방의 성격(규칙)과 상태(결과)는 남는다.</p>
+
+          <h3>8.2 커뮤니티는 기록이 아니라 반복 만남으로 유지된다</h3>
+          <p>중요한 것은 무엇이 저장되었는가가 아니라, 어디에서 누구와 얼마나 자주 마주치며 어떤 맥락으로 전환하는가다.</p>
+
+          <h3>8.3 네트워크 효과는 확산이 아니라 전환 밀도다</h3>
+          <p>사용자 수가 아니라 전환의 촘촘함이 관계의 밀도를 만든다.</p>
+        </section>
+
+        <section id="ch9">
+          <h2>9. 외부 시스템과의 접점 확장</h2>
+          <div class="kw">키워드: Slack, Discord, 링크 진입, 임베드</div>
+
+          <h3>9.1 메신저·협업툴 연동: 알림이 아니라 이동</h3>
+          <p>외부 메시지에서 “페이지를 연다”가 아니라 “특정 방으로 진입한다”로 연결한다.</p>
+
+          <h3>9.2 외부 링크·임베드: 콘텐츠가 아니라 장소 공유</h3>
+          <p>외부 공유 단위는 글이 아니라 공간이며, 사용자는 ‘어디로 들어간다’는 감각을 유지한다.</p>
+
+          <h3>9.3 API 및 확장: 기업·기관을 위한 구조</h3>
+          <p>공간 생성/권한/상태 기반 열림·닫힘을 API로 연결한다. 제공하는 것은 기능이 아니라 진입 가능한 구조다.</p>
+
+          <div class="keyline"><strong>핵심 문장</strong><br/>개미굴은 사용자를 붙잡지 않는다. 외부에서 시작된 맥락이 자연스럽게 공간으로 이어지게 할 뿐이다.</div>
+        </section>
+
+        <section id="ch10">
+          <h2>10. 시장 분석: 단일 시장이 아닌 구조 시장</h2>
+          <div class="kw">키워드: 사용자 시간, 전환, 구조적 피로</div>
+
+          <h3>10.1 시장의 오해</h3>
+          <p>보고서는 시장을 쪼개지만 사용자는 “지금 뭐 하지?”라는 하나의 질문을 반복한다. 결국 시장은 스마트폰을 들고 있는 시간이다.</p>
+
+          <h3>10.2 구조적 피로</h3>
+          <p>앱 사이 이동은 맥락을 끊는다. 개미굴은 전환이 끊기지 않도록 경험을 재구성한다.</p>
+
+          <h3>10.3 ‘맥락이 이어지는 시간’의 시장</h3>
+          <p>콘텐츠 소비(스토리)–상호작용(선택/상태)–관계(동시성/재방문)–공간 이동(전환)이 하나의 이어진 경험으로 묶이는 시간.</p>
+
+          <div class="keyline"><strong>핵심 문장</strong><br/>우리는 게임이나 소설을 파는 것이 아니다. 전환이 끊기지 않는 구조를 제공한다.</div>
+        </section>
+
+        <section id="ch11">
+          <h2>11. 경쟁 환경 분석</h2>
+          <div class="kw">키워드: 기능 경쟁이 아닌 구조 경쟁</div>
+
+          <h3>11.1 구조 경쟁</h3>
+          <p>사용자는 더 좋은 기능 때문에 앱을 바꾸지 않는다. <strong>내가 들어가 있는 공간의 성격과 전환 방식</strong>이 바뀔 때 앱을 바꾼다.</p>
+
+          <h3>11.2 vs Roblox</h3>
+          <p>3D의 제작/조작 비용은 높다. 개미굴은 상호작용과 상태, 전환의 알맹이를 가장 가벼운 인터페이스로 옮긴다.</p>
+
+          <h3>11.3 vs Webnovel/Wattpad</h3>
+          <p>문서형 소비는 정적이다. 개미굴은 텍스트를 대화공간의 사건으로 만들고 선택/상태 변화로 이어지게 한다.</p>
+
+          <h3>11.4 vs Discord</h3>
+          <p>Discord는 커뮤니케이션 툴이지만 전환 설계와 상태 레이어를 대화공간 내부에 안정적으로 얹기 어렵다. 개미굴은 전환과 상태를 구조에 포함한 채로 시작한다.</p>
+
+          <h3>11.5 vs Notion/Wix</h3>
+          <p>노코드 빌더는 정적이고 흐름이 자동으로 생기지 않는다. 개미굴은 전환을 설계할 수 있는 구조를 준다.</p>
+
+          <div class="keyline"><strong>핵심 문장</strong><br/>우리는 화려한 그래픽이나 빠른 채팅으로 싸우지 않는다. 전환과 상태가 결합된 가장 편안한 구조로 싸운다.</div>
+        </section>
+
+        <section id="ch12">
+          <h2>12. 수익 모델</h2>
+          <div class="kw">키워드: 구조 기반 수익, vertical 확장</div>
+
+          <p>개미굴의 수익은 특정 콘텐츠 흥행에 의존하지 않는다. <strong>관여(선택/상태/운영)</strong>가 늘어날수록 비용이 자연스럽게 발생하는 구조를 만든다.</p>
+
+          <h3>12.1 콘텐츠 수익: 개입에 대한 지불</h3>
+          <ul>
+            <li>선택지 확장</li>
+            <li>특정 결과를 여는 조건</li>
+            <li>세계 흐름에 영향을 미치는 결정</li>
+          </ul>
+
+          <h3>12.2 공간 이용 수익: 운영 레버에 대한 지불</h3>
+          <ul>
+            <li>방 확장(슬롯/구조)</li>
+            <li>권한 관리(입장/역할)</li>
+            <li>상태/룰 확장</li>
+            <li>공간 커스터마이징</li>
+          </ul>
+
+          <h3>12.3 크리에이터 수익 분배</h3>
+          <p>플랫폼은 거래를 중개하고 수수료를 취한다. 생태계가 커질수록 매출은 구조적으로 증가한다.</p>
+
+          <h3>12.4 기업·기관 활용</h3>
+          <p>공간 구축/운영/연동은 인프라 제공 모델로 수익화된다.</p>
+
+          <h3>12.5 API 및 확장 기능</h3>
+          <p>구조를 쓰는 대가로 API 사용료/라이선스/엔터프라이즈 플랜이 열린다.</p>
+
+          <div class="keyline"><strong>핵심 문장</strong><br/>사람들이 관여할 수밖에 없는 구조를 만들면, 수익은 그 구조를 따라온다.</div>
+        </section>
+
+        <section id="ch13">
+          <h2>13. Go-to-Market 전략</h2>
+          <div class="kw">키워드: 하나의 사례로 시작, 구조 확장</div>
+
+          <h3>13.1 다수의 시장을 동시에 공략하지 않는다</h3>
+          <p>처음부터 다 보여주면 “뭐든 되는 플랫폼”으로 오해된다. 구조를 설명하지 않고 <strong>작동하는 장면 하나</strong>를 보여준다.</p>
+
+          <h3>13.2 초기 선택: 게임 또는 스토리</h3>
+          <p>사용자가 “내가 개입했고 결과가 반영됐다”를 느끼는 순간을 만드는 것이 핵심이다.</p>
+
+          <h3>13.3 첫 목표는 히트가 아니라 귀환</h3>
+          <div class="quote">소수의 사용자가, 매일 같은 방으로 돌아오는가.</div>
+
+          <h3>13.4 구조 검증 이후 확장</h3>
+          <p>새 vertical은 새 제품이 아니라 같은 구조 위에 사용 패턴을 얹는 방식으로 확장한다.</p>
+        </section>
+
+        <section id="ch14">
+          <h2>14. 성장 전략 및 로드맵</h2>
+          <div class="kw">키워드: 기능 추가가 아닌 사용 사례 추가</div>
+
+          <h3>14.1 성장의 기준</h3>
+          <p>성장은 기능의 양이 아니라 <strong>구조의 재사용 가능성</strong>이다.</p>
+
+          <h3>14.2 에디터는 안정 자산</h3>
+          <p>조작 방식을 흔들지 않는다. 학습 곡선을 다시 만들지 않는다.</p>
+
+          <h3>14.3 로드맵은 세계 유형 단위</h3>
+          <ul>
+            <li>1단계: 단일 유형의 깊이 확보(반복 방문/관여)</li>
+            <li>2단계: 동일 구조의 다른 유형 추가</li>
+            <li>3단계: 비엔터테인먼트 확장(기업/교육/기관)</li>
+          </ul>
+
+          <h3>14.4 확장은 누적</h3>
+          <p>새 앱/새 모드가 아니라 같은 구조 위에 세계가 조용히 추가된다.</p>
+
+          <h3>14.5 속도 제한 원칙</h3>
+          <div class="quote">이 확장이 기존 사용자에게 설명 없이 이해되는가?</div>
+        </section>
+
+        <section id="ch15">
+          <h2>15. 트랙션 및 현재 진행 상황</h2>
+          <div class="kw">키워드: 작성 예정</div>
+          <div class="note">이 장은 현재 자료(프로토타입/에디터/테스트/지표 정의)에 맞춰 별도 작성이 필요합니다.</div>
+        </section>
+
+        <section id="ch16">
+          <h2>16. 팀 및 운영</h2>
+          <div class="kw">키워드: 작성 예정</div>
+          <div class="note">운영을 “사후 모더레이션”이 아니라 “구조/권한/등급/전환 설계” 중심으로 정의하는 방향이 적합합니다.</div>
+        </section>
+
+        <section id="ch17">
+          <h2>17. 재무 계획</h2>
+          <div class="kw">키워드: 저비용 구조, 축적형 수익, 생존 가능성</div>
+
+          <h3>17.1 전제: 콘텐츠 제작비 구조가 아니다</h3>
+          <p>대규모 제작비/히트작 의존/마케팅 선투자를 전제로 하지 않는다. 비용은 인건비와 구조 유지 기술 비용으로 단순화된다.</p>
+
+          <h3>17.2 초기 비용 구조</h3>
+          <ul>
+            <li>팀 4명: 월 2천만 원 수준(가정)</li>
+            <li>팀 5명: 월 3천만 원 수준(가정)</li>
+          </ul>
+
+          <h3>17.3 서버 비용</h3>
+          <p>텍스트, 선택 이벤트, 상태 데이터 중심이라 초기 서버 비용 비중이 낮다.</p>
+
+          <h3>17.4 수익 발생 기준</h3>
+          <ul>
+            <li>반복 방문 발생</li>
+            <li>관계 형성</li>
+            <li>방 주인의 운영 의지</li>
+          </ul>
+
+          <h3>17.5 6개월 목표</h3>
+          <div class="quote">이 비용으로 반복 방문과 관여를 만드는 구조를 증명할 수 있는가?</div>
+
+          <h3>17.6 스케일</h3>
+          <p>비용은 선형, 수익은 비선형. 하나의 에디터/구조 위에 세계와 거래가 늘기 때문이다.</p>
+        </section>
+
+        <section id="ch18">
+          <h2>18. 리스크와 대응</h2>
+          <div class="kw">키워드: 정체성 붕괴, 만능 플랫폼 위험, 안전/청소년 보호</div>
+
+          <h3>18.1 정체성 붕괴</h3>
+          <p>요구를 무차별 수용하면 구조가 흐려진다. “가능한가?”가 아니라 “같은 구조로 설명되는가?”만 묻는다.</p>
+
+          <h3>18.2 만능 플랫폼 위험</h3>
+          <p>설명해야 하는 순간 이미 실패다. 카테고리를 늘리지 않고 같은 구조 위에 사용 사례를 얹는다.</p>
+
+          <h3>18.3 음란물/유해 콘텐츠</h3>
+          <p>완전 제거가 아니라 <strong>발생 비용을 높이고 확산을 구조적으로 제한</strong>한다.</p>
+          <ul>
+            <li>방 생성 시 성격/등급/권한 명시</li>
+            <li>성격에 맞지 않는 흐름은 구조적으로 차단</li>
+            <li>19+는 분리된 세계/권한 체계로 격리</li>
+          </ul>
+
+          <h3>18.4 청소년 보호</h3>
+          <p>운영 규칙만으로 해결하지 않고 설계에서 위험을 낮춘다(1:1 은폐형 기본값 최소화, 공개/반공개 공간 중심 관계 형성 등).</p>
+
+          <h3>18.5 커뮤니티 혼탁</h3>
+          <p>구조가 평평할 때 혼란이 증가한다. 공간 세분화, 목적성 명확화, 전환 비용/리듬 설계로 대응한다.</p>
+
+          <div class="keyline"><strong>핵심 문장</strong><br/>가장 큰 리스크는 외부가 아니다. 구조 원칙을 잊는 순간이 가장 위험하다.</div>
+        </section>
+
+        <section id="ch19">
+          <h2>19. 장기적 그림</h2>
+          <div class="kw">키워드: 구조 플랫폼, 디지털 공간의 표준</div>
+
+          <h3>19.1 플랫폼을 넘어서 구조가 된다</h3>
+          <p>개미굴은 “무엇을 하느냐”로 설명되지 않는다. 사람의 디지털 공간 구성과 전환 방식에 대한 답이 된다.</p>
+
+          <h3>19.2 디지털 공간의 공통 언어</h3>
+          <ul>
+            <li>“방 하나 만들자”</li>
+            <li>“이 방이랑 저 방 연결하자”</li>
+            <li>“여긴 공개, 여긴 제한”</li>
+            <li>“다음 전환은 어디지?”</li>
+          </ul>
+
+          <h3>19.3 콘텐츠는 사라져도 구조는 남는다</h3>
+          <p>콘텐츠는 유행을 타지만 구조는 남는다. 개미굴은 ‘다음 구조’를 만든다.</p>
+
+          <h3>19.4 개미굴 이후의 확장</h3>
+          <p>창작자/기업/기관/외부 서비스가 구조 위에 올라온다. 개미굴은 콘텐츠 운영자가 아니라 <strong>공간 인프라</strong>가 된다.</p>
+
+          <div class="keyline"><strong>핵심 문장</strong><br/>개미굴은 콘텐츠를 담는 플랫폼이 아니라, 디지털 공간을 만드는 방식 그 자체가 되는 것을 목표로 한다.</div>
+
+          <div class="footer">© 내부용 문서 – HTML 렌더링 버전</div>
+        </section>
+
+      </article>
+    </main>
+  </div>
+</body>
+</html>

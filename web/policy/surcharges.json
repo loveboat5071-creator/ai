@@ -1,0 +1,72 @@
+[
+  {
+    "channel_name": "MBC",
+    "surcharge_type": "region",
+    "condition_value": "서울/경기/인천",
+    "rate": 0.2,
+    "description": "서울/경기/인천 지역 할증"
+  },
+  {
+    "channel_name": "MBC",
+    "surcharge_type": "region",
+    "condition_value": "시/군/구(일반)",
+    "rate": 0.4,
+    "description": "시/군/구 일반 지역 할증"
+  },
+  {
+    "channel_name": "MBC",
+    "surcharge_type": "region",
+    "condition_value": "시/군/구(청약집중지역)",
+    "rate": 0.6,
+    "description": "청약집중지역 할증"
+  },
+  {
+    "channel_name": "MBC",
+    "surcharge_type": "custom",
+    "condition_value": "커스텀타겟팅",
+    "rate": 0.4,
+    "description": "커스텀 타겟팅 할증"
+  },
+  {
+    "channel_name": "EBS",
+    "surcharge_type": "region",
+    "condition_value": "시/군/구(일반)",
+    "rate": 0.4,
+    "description": "시/군/구 일반 지역 할증"
+  },
+  {
+    "channel_name": "EBS",
+    "surcharge_type": "region",
+    "condition_value": "시/군/구(청약집중지역)",
+    "rate": 0.8,
+    "description": "청약집중지역 할증"
+  },
+  {
+    "channel_name": "PP",
+    "surcharge_type": "region",
+    "condition_value": "서울특별시/도/광역시",
+    "rate": 0.2,
+    "description": "서울특별시/도/광역시 할증"
+  },
+  {
+    "channel_name": "PP",
+    "surcharge_type": "region",
+    "condition_value": "시/군/구(일반)",
+    "rate": 0.4,
+    "description": "시/군/구 일반 지역 할증"
+  },
+  {
+    "channel_name": "PP",
+    "surcharge_type": "region",
+    "condition_value": "시/군/구(청약집중지역)",
+    "rate": 1.0,
+    "description": "청약집중지역 할증"
+  },
+  {
+    "channel_name": "PP",
+    "surcharge_type": "custom",
+    "condition_value": "커스텀타겟팅",
+    "rate": 0.4,
+    "description": "커스텀 타겟팅 할증"
+  }
+]

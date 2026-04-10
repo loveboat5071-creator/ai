@@ -1,0 +1,12 @@
+data_sources
+ai_ready
+output
+focusmap
+.playwright-cli
+*.pdf
+*.xlsx
+*.xls
+*.pptx
+*.ppt
+web/node_modules
+web/.next

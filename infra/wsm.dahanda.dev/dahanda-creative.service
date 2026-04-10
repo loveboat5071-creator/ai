@@ -1,0 +1,16 @@
+[Unit]
+Description=Dahanda Creative Backend
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/opt/wsmedia-focusmap/web
+EnvironmentFile=/opt/wsmedia-focusmap/web/.env.production
+ExecStart=/usr/bin/npm run start
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

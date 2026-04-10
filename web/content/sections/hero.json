@@ -1,0 +1,25 @@
+{
+  "eyebrow": "WS MEDIA",
+  "title": "퍼포먼스 중심\n미디어 솔루션",
+  "subtitle": "브랜딩과 리드를 동시에 설계하고, 데이터로 성과를 검증합니다.",
+  "kpis": [
+    {
+      "label": "타겟팅 광고"
+    },
+    {
+      "label": "CPV 합리적 과금"
+    },
+    {
+      "label": "투명한 성과 리포트"
+    }
+  ],
+  "ctas": [
+    {
+      "label": "견적 시뮬레이션",
+      "actionType": "openEstimator",
+      "payload": {
+        "startStep": 1
+      }
+    }
+  ]
+}

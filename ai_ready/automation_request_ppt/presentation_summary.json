@@ -1,0 +1,8 @@
+{
+  "id": "automation_request_ppt",
+  "label": "포커스미디어 오토마타 제작 의뢰",
+  "source_path": "/Users/parktaejun/Desktop/wsmedia-focusmap/tjp인공지능연구소_오토마타의뢰(0312).pptx",
+  "kind": "pptx",
+  "slide_count": 3,
+  "slides_file": "slides.json"
+}
