@@ -46,7 +46,7 @@ export default function AppChrome({
   navItems = appChromeNavItems,
   showLogout = false,
   brandHref = '/',
-  brandLabel = 'WS MEDIA SALES TOOL',
+  brandLabel = 'WS MEDIA SALES TOOL by LYJ',
   brandIcon = '📺',
 }: AppChromeProps) {
   const pathname = usePathname() ?? '';

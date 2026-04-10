@@ -12,7 +12,7 @@ export default function SalesLayout({ children }: SalesLayoutProps) {
       navItems={appChromeNavItems}
       showLogout
       brandHref="/sales"
-      brandLabel="WS MEDIA SALES TOOL"
+      brandLabel="WS MEDIA SALES TOOL by LYJ"
       brandIcon="📺"
     >
       {children}
